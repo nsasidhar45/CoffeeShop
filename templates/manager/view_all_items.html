@@ -1,0 +1,41 @@
+{% extends 'manager/dashboard.html' %}
+
+{% block content %}
+    <h1>All Items</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Subcategory</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>
+                        {% if item.image %}
+                            <img src="{{ item.image.url }}" alt="{{ item.name }} Image" width="50">
+                        {% else %}
+                            No Image
+                        {% endif %}
+                    </td>
+                    <td>{{ item.name }}</td>
+                    <td>${{ item.price }}</td>
+                    <td>{{ item.category }}</td>
+                    <td>{{ item.subcategory }}</td>
+                    <td> 
+                        <div class="d-flex justify-content-center" >
+                            <a href="{% url 'edit_item' item.id %}"><p>edit</p></a>&nbsp;
+                            <a href="{% url 'delete_item' item.id %}"><p>delete</p></a>&nbsp;
+                        </div>
+                        </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

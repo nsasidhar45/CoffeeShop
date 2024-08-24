@@ -1,0 +1,46 @@
+{% extends 'manager/dashboard.html' %}
+
+
+{% block content %}
+{% if orders %}
+<!--MY ORDERS-->
+<br><br>
+<table class="table" style="width: 80%;">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+      <tr>
+        <th scope="row">{{ order.id }}</th>
+        <td>{{ order.order_date }}</td>
+        <td>{{ order.total_price }}</td>
+        <td>{{order.status}}</td>
+        <td>
+          {% if order.status == 'pending' %}
+    <form action="{% url 'update_status' order.id %}" method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn  btn-success" >Mark as Delivered</button>
+    </form>
+    {% else %}
+    <div class="d-flex justify-content-center">
+      <p><i class="bi bi-check-square-fill"></i></p>
+    </div>
+    {% endif %}
+        </td>
+      </tr>
+      {%endfor %}
+    </tbody>
+  </table> 
+  <br><br><br><br>
+<!--MY ORDERS-->
+{% else %}
+<p>No orders found.</p>
+{% endif %}
+{% endblock %}

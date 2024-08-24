@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if orders %}
+<!--MY ORDERS-->
+<br><br>
+<table class="table" style="width: 80%;">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Order ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">Amount</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+      <tr>
+        <th scope="row">{{ order.id }}</th>
+        <td>{{ order.order_date }}</td>
+        <td>{{ order.total_price }}</td>
+        <td>{{order.status}}</td>
+      </tr>
+      {%endfor %}
+    </tbody>
+  </table> 
+  <br><br><br><br>
+<!--MY ORDERS-->
+{% else %}
+<p>No orders found.</p>
+{% endif %}
+{% endblock %}

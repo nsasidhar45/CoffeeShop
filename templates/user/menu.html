@@ -1,0 +1,92 @@
+
+{% extends 'base.html' %}
+
+<style>
+   
+.details {
+            border: 1.5px solid grey;
+            color: #212121;
+            width: 100%;
+            height: auto;
+            box-shadow: 0px 0px 10px #212121;
+        }
+
+        .cart {
+            background-color: #212121;
+            color: white;
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: 900;
+            width: 100%;
+            height: 39px;
+            padding-top: 9px;
+            box-shadow: 0px 5px 10px  #212121;
+        }
+
+        .card {
+            width: fit-content;
+        }
+
+        .card-body {
+            width: fit-content;
+        }
+
+        .btn {
+            border-radius: 0;
+        }
+
+        .img-thumbnail {
+            border: none;
+        }
+
+        .card {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+            border-radius: 5px;
+            padding-bottom: 10px;
+        }
+
+
+
+
+        
+</style>
+{% block content %}
+
+<form method="get" class="d-flex justify-content-center " style="margin-top: 3%;" >
+    <label for="category">View Category: &nbsp; </label>
+    <select id="category" name="category">
+        <option value="">All</option>
+        {% for category in categories %}
+        <option value="{{ category }}" {% if category == selected_category %}selected{% endif %}>{{ category }}</option>
+        {% endfor %}
+        <!-- Add more options for other categories if needed -->
+    </select> &nbsp;  &nbsp; 
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
+
+{% if items %}
+<div class='row card-group' style="margin-top: 3%; margin-bottom: 10%; margin-left: 5%; margin-right: 5%;">
+    {% for item in items %}
+      <div class="col-3" style="margin-top: 5%;">
+        <div class="card h-80">
+                <div class="card-img" >
+                    <img class='mx-auto img-thumbnail' src="{{item.image.url}}" />
+                </div>
+                <div class="card-body text-center mx-auto">
+                    <div class='cvp'>
+                        <h5 class="card-title font-weight-bold">{{item.name}}</h5>
+                        <p class="card-text">${{item.price}}</p>
+                        <a href="{% url 'add_to_cart' item.id %}" class="btn cart px-auto">ADD TO CART</a>
+                    </div>
+                </div>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% else %}
+    <p>No items found.</p>
+{% endif %}
+<br><br><br>
+        
+{% endblock %}
+

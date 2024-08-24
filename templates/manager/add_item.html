@@ -1,0 +1,31 @@
+{% extends 'manager/dashboard.html' %}
+
+
+{% block content %}      
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group mb-3">
+                        <input type="text" class="form-control" id="inputName" placeholder="name" name="name" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="number" step="0.01" class="form-control" id="inputPrice" placeholder="price" name="price" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" class="form-control" placeholder="category" id="inputCategory" name="category" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input type="text" class="form-control" placeholder="sub-category" id="inputSubcategory" name="subcategory" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="inputImage">Add image</label><br>
+                        <input type="file" class="form-control-file"  id="inputImage" name="image" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Item</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,275 @@
+{%extends 'base.html' %}
+{% block content %}
+<!--Carousel-->
+<header>
+  
+    <!-- Background image -->
+    <div
+      class="p-5 text-center bg-image"
+      style="
+        background-image: url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        height: 400px;
+      "
+    >
+      <div class="mask" >
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div class="text-white">
+            <br><br><br>
+            <h1 class="mb-3">Coffee Restaurant</h1>
+            <h4 class="mb-3">Hot Beverages, Snacks and Food</h4>
+            <a class="btn btn-outline-light btn-lg" href="{% url 'view_menu' %}" role="button">Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </header>
+<!--Carousel-->
+<br><br><br>
+
+
+<!--SERVICES-->
+
+<div class="py-5 service-7">
+    <h2><blockquote class="font-weight-bold d-flex justify-content-center ">OUR SERVICES</blockquote></h2>
+
+    <div class="container">
+        <!-- Row  -->
+        <div class="row">
+            <!-- Column -->
+            <div class="col-md-4 mb-4">
+                <div class="">
+                    <div class="mt-4">
+                        <h6 class="font-weight-medium">Beverages</h6>
+                        <p class="mt-3">Sip on an array of refreshing beverages that tantalize your taste buds, from handcrafted coffees to exquisite teas, and indulge in our signature mocktails for a delightful and memorable experience.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <div class="col-md-4 mb-4">
+                <div class="">
+                    <div class="mt-4">
+                        <h6 class="font-weight-medium">Food</h6>
+                        <p class="mt-3">Savor a culinary journey with our diverse menu, showcasing delectable dishes crafted with passion and finest ingredients, perfect for a memorable dining experience that delights every palate.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Column -->
+            <div class="col-md-4 mb-4">
+                <div class="">
+                    <div class="mt-4">
+                        <h6 class="font-weight-medium">Outdoor Catering</h6>
+                        <p class="mt-3">Elevate your special events with our impeccable outdoor catering services. From intimate gatherings to grand celebrations, our skilled team delivers exquisite cuisine and exceptional hospitality, ensuring a memorable occasion for all.</p>
+                    </div>
+                </div>
+            </div>
+						
+        </div>
+    </div>
+</div>
+<!--SERVICES-->
+
+
+
+<!-- shop banner -->
+
+<div class="service-40 py-5 wrap-feature40-box" style="background-image:url(https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1), url(https://images.pexels.com/photos/15966458/pexels-photo-15966458/free-photo-of-bir-fincan-taze-kahve.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card border-0 mb-4">
+                    <div class="card-body"> <span class="badge badge-danger rounded-pill px-3 py-1 font-weight-light">Buy one get one free</span>
+                        <h3 class="my-3 text-uppercase">Espresso Coffee</h3>
+                        <p class="my-4">Bold and flavorful, espresso is an intense coffee shot, extracted under high pressure, with a luscious crema. A rich, aromatic delight perfect for quick energizing moments or creating indulgent coffee creations. Elevate your coffee experience and savor the art of espresso.</p> 
+												<a class="btn btn-info-gradiant btn-md btn-rounded border-0 text-white" href="{% url 'view_menu' %}"><span>Order now</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6"> 
+							<img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="wrapkit" class="img-fluid rounded" /> 
+						</div>
+        </div>
+    </div>
+</div>
+<!-- end shop banner -->
+<br><br><br>
+<h2><blockquote class="font-weight-bold d-flex justify-content-center ">OUR MENU</blockquote></h2>
+<!--Section-->
+<style>
+
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
+.service-7 {
+  font-family: "Montserrat", sans-serif;
+	color: #8d97ad;
+  font-weight: 300;
+}
+
+.service-7 h1, .service-7 h2, .service-7 h3, .service-7 h4, .service-7 h5, .service-7 h6 {
+  color: #3e4555;
+}
+
+.service-7 .font-weight-medium {
+	font-weight: 500;
+}
+
+.service-7 a {
+	text-decoration: none;
+}
+
+.service-7 .linking {
+	color: #3e4555;
+}
+
+.service-7 .linking:hover {
+	color: #316ce8;
+}
+
+.service-7 .subtitle {
+    color: #8d97ad;
+    line-height: 24px;
+}
+
+.service-7 .btn-info-gradiant {
+	  background: #188ef4;
+    background: -webkit-linear-gradient(legacy-direction(to right), #188ef4 0%, #316ce8 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#188ef4), to(#316ce8));
+    background: -webkit-linear-gradient(left, #188ef4 0%, #316ce8 100%);
+    background: -o-linear-gradient(left, #188ef4 0%, #316ce8 100%);
+    background: linear-gradient(to right, #188ef4 0%, #316ce8 100%);
+}
+
+.service-7 .btn-info-gradiant:hover {
+	  background: #316ce8;
+    background: -webkit-linear-gradient(legacy-direction(to right), #316ce8 0%, #188ef4 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#316ce8), to(#188ef4));
+    background: -webkit-linear-gradient(left, #316ce8 0%, #188ef4 100%);
+    background: -o-linear-gradient(left, #316ce8 0%, #188ef4 100%);
+    background: linear-gradient(to right, #316ce8 0%, #188ef4 100%);
+}
+
+.service-7 .btn-md {
+    padding: 15px 45px;
+    font-size: 16px;
+}
+
+
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
+.service-40 {
+  font-family: "Montserrat", sans-serif;
+	color: #8d97ad;
+  font-weight: 300;
+}
+
+.service-40 h1, .service-40 h2, .service-40 h3, .service-40 h4, .service-40 h5, .service-40 h6 {
+  color: #3e4555;
+}
+
+.service-40 .bg-light {
+    background-color: #f4f8fa !important;
+}
+
+.service-40 .badge {
+	line-height: 14px;
+}
+
+.service-40 .badge-danger {
+	background-color: #ff4d7e !important;
+}
+
+.service-40.wrap-feature40-box {
+  background-position: left top, top right;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.service-40 .btn-info-gradiant {
+		background: #188ef4;
+    background: -webkit-linear-gradient(legacy-direction(to right), #188ef4 0%, #316ce8 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#188ef4), to(#316ce8));
+    background: -webkit-linear-gradient(left, #188ef4 0%, #316ce8 100%);
+    background: -o-linear-gradient(left, #188ef4 0%, #316ce8 100%);
+    background: linear-gradient(to right, #188ef4 0%, #316ce8 100%);
+}
+
+.service-40 .btn-info-gradiant:hover {
+		background: #316ce8;
+    background: -webkit-linear-gradient(legacy-direction(to right), #316ce8 0%, #188ef4 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#316ce8), to(#188ef4));
+    background: -webkit-linear-gradient(left, #316ce8 0%, #188ef4 100%);
+    background: -o-linear-gradient(left, #316ce8 0%, #188ef4 100%);
+    background: linear-gradient(to right, #316ce8 0%, #188ef4 100%);
+}
+
+.service-40 .btn-md {
+    padding: 15px 45px;
+    font-size: 16px;
+}  
+
+   
+    .details {
+                border: 1.5px solid grey;
+                color: #212121;
+                width: 100%;
+                height: auto;
+                box-shadow: 0px 0px 10px #212121;
+            }
+    
+            .cart {
+                background-color: #212121;
+                color: white;
+                margin-top: 10px;
+                font-size: 12px;
+                font-weight: 900;
+                width: 100%;
+                height: 39px;
+                padding-top: 9px;
+                box-shadow: 0px 5px 10px  #212121;
+            }
+    
+            .card {
+                width: fit-content;
+            }
+    
+            .card-body {
+                width: fit-content;
+            }
+    
+            .btn {
+                border-radius: 0;
+            }
+    
+            .img-thumbnail {
+                border: none;
+            }
+    
+            .card {
+                box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+                border-radius: 5px;
+                padding-bottom: 10px;
+            }
+    </style>
+ 
+   
+        <div class='row card-group' style="margin-top: 5%; margin-bottom: 10%; margin-right: 5%; margin-left: 5%;">
+          {% for item in items %}
+            <div class="col-3" style="margin-top: 5%;">
+              <div class="card h-80">
+                      <div class="card-img" >
+                          <img class='mx-auto img-thumbnail' src="{{item.image.url}}" />
+                      </div>
+                      <div class="card-body text-center mx-auto">
+                          <div class='cvp'>
+                              <h5 class="card-title font-weight-bold">{{item.name}}</h5>
+                              <p class="card-text">${{item.price}}</p>
+                              <a href="{% url 'add_to_cart' item.id %}" class="btn cart px-auto">ADD TO CART</a>
+                          </div>
+                      </div>
+              </div>
+            </div>
+        {% endfor %}
+        </div>
+    <br><br><br><br><br><br><br><br><br>
+            
+<!--Section-->
+
+{% endblock %}

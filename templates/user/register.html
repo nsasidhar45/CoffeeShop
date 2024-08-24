@@ -1,0 +1,38 @@
+{%extends 'base.html' %}
+
+{% block content %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <br><br><br>
+<form method="post" class=" mb-4">
+    {% csrf_token %}
+      <div class="container mt-4">
+      <div class="row justify-content-center">
+          <div class="col-md-4">
+              <form method="post" >
+                  <div class="mb-3">
+                      <input type="text" class="form-control" name="username" placeholder="username" required>
+                  </div>
+                  <br>
+                  <div class="mb-3">
+                      <input type="email" class="form-control" required placeholder="email" name="email">
+                  </div>
+                  <br>
+                  <div class="mb-3">
+                      <input type="password" class="form-control" required placeholder="password" name="password">
+                  </div>
+                  <div class="form-check mb-6 d-flex justify-content-center ">
+                  <button type="submit" class="btn btn-primary">Register</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  {% endblock %}
+

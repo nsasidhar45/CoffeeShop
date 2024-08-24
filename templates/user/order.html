@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    
+    <div class="card rounded">
+        
+      <div class="card-header">
+        <h2>Order Confirmation</h2>
+        <h6>Your order has been placed successfully!</h6>
+
+      </div>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item">Order Date: {{ order.order_date }}</li>
+          <li class="list-group-item">Order ID: {{ order.id }}</li>
+          <li class="list-group-item">Total Price: ${{ order.total_price }}</li>
+        </ul>
+      </div>
+      <br>
+      <div class="form-check mb-6 d-flex justify-content-center ">
+     <a href="{% url 'index' %}" ><button type="button" class="btn btn-primary  btn-block btn-lg">Back </button></a>
+     </div>                    
+     <br>
+  </div>
+  
+
+
+<!--ORDER CONFIRMED-->
+{% endblock %}
